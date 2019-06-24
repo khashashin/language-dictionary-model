@@ -32,9 +32,9 @@ class WordCoreModel(BaseModel):
     word_russian_typed = models.CharField(max_length=255, default="", blank=True)
     word_english_typed = models.CharField(max_length=255, default="", blank=True)
 
-    homonyms = models.ManyToManyField('self', null=True, blank=True)
-    synonyms = models.ManyToManyField('self', null=True, blank=True)
-    antonyms = models.ManyToManyField('self', null=True, blank=True)
+    homonyms = models.ManyToManyField('self', blank=True)
+    synonyms = models.ManyToManyField('self', blank=True)
+    antonyms = models.ManyToManyField('self', blank=True)
 
     class Meta:
         indexes = [models.Index(fields=['word_core'])]
